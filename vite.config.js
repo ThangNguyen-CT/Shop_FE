@@ -12,7 +12,7 @@ export default defineConfig({
     }
   },
   server: {
-    port: '8001',
+    port: 'https://shop-fe-six.vercel.app',
     proxy: {
     "/api": {
         target: "https://puce-doubtful-harp-seal.cyclic.app/",
