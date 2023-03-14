@@ -1,7 +1,7 @@
 import createHttp from "./http.service";
 class CartService {
     constructor() {
-        this.http = createHttp("/api/carts",true);
+        this.http = createHttp("https://puce-doubtful-harp-seal.cyclic.app/api/carts",true);
     }
     async create(data) {
         return (await this.http.post("/add", data)).data;

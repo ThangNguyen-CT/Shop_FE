@@ -1,7 +1,7 @@
 import createHttp from "./http.service";
 class Users {
     constructor() {
-        this.http = createHttp("/api/users",true);
+        this.http = createHttp("https://puce-doubtful-harp-seal.cyclic.app/api/users",true);
     }
     async getAll() {
         return (await this.http.get("/all")).data;
