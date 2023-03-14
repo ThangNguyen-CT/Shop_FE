@@ -12,7 +12,7 @@ export default defineConfig({
     }
   },
   server: {
-    port: 'https://shop-fe-one.vercel.app/',
+    port: '8001',
     proxy: {
     "/api": {
         target: "https://puce-doubtful-harp-seal.cyclic.app/",
@@ -20,4 +20,5 @@ export default defineConfig({
         },
     }
   },
+  base: process.env.NODE_ENV === "production" ? "/FE/" : "/",
 })
