@@ -22,6 +22,9 @@ export default {
 		}),
 	},
 	methods:{
+		getadmin(){
+			return this.currentUser.isAdmin;
+		},
 		showedit(){
 			if(!this.checkedit){
 				this.checkedit=true;
@@ -30,13 +33,18 @@ export default {
 				this.checkedit=false;
 			}
 		},
-
+	},
+	mounted(){
+		this.getadmin();
 	}
 };
 </script>
 <template>
 	<HeaderShop></HeaderShop>
 	<toastsVue></toastsVue>
+	<router-link to="/admin" v-if="getadmin()">
+			<span class="">Trang quản trị</span>
+	</router-link>
 	<div style="display: flex;">
 	<div v-if="currentUser" style="margin: 100px;">
 		<header class="jumbotron">

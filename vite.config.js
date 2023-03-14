@@ -11,13 +11,4 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  // server: {
-  //   port: 'https://shop-fe-six.vercel.app',
-  //   proxy: {
-  //   "/api": {
-  //       target: "https://puce-doubtful-harp-seal.cyclic.app/",
-  //       changeOrigin: true,
-  //       },
-  //   }
-  // },
 })
