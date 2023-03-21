@@ -88,9 +88,8 @@ export default {
     <div class="header text-center">
         <h2>Quản trị viên</h2>
     </div>
-    <div class="main_admin d-flex" style="margin-top:30px; margin-left: 100px;">
-
-        <div class="list_users w-50">
+    <div class="main_admin d-flex justify-content-around" style="margin-top:30px; margin-left: 100px;">
+        <div class="list_users">
             <div class="user_heading">
                 <h4>Danh Sách Người dùng</h4>
             </div>
@@ -100,8 +99,10 @@ export default {
                     <input type="search" id="form1" class="form-control" v-model="searchuser" />
                 </div>
             </div>
-            <div class="list_item_user d-flex" id="user">
-                <ListUser :users="fiilterSearchUser" :refeshlist="getall" v-model:activeUser="activeUser"></ListUser>
+            <div class="d-flex">
+                <div class="list_item_user d-flex" id="user">
+                    <ListUser :users="fiilterSearchUser" :refeshlist="getall" v-model:activeUser="activeUser"></ListUser>
+                </div>
                 <div class="card_product border border-light border-2 h-100 bg-light text-dark" style="padding: 10px;"
                     v-if="getindexuser">
                     <h5>Chi tiết người dùng</h5>
@@ -109,7 +110,6 @@ export default {
                 </div>
             </div>
         </div>
-
         <div class="list_products">
             <div class="product_heading">
                 <h4>Danh Sách Người dùng</h4>
@@ -120,9 +120,11 @@ export default {
                     <input type="search" id="form1" class="form-control" v-model="searchproduct" />
                 </div>
             </div>
-            <div class="list_item_product d-flex" id="product">
-                <ListProduct :products="fiilterSearchProduct" :refeshlist="getall" :getindex="getindex"
-                    v-model:activeIndex="activeIndex"></ListProduct>
+            <div class="d-flex">
+                <div class="list_item_product d-flex justify-content-around" id="product">
+                    <ListProduct :products="fiilterSearchProduct" :refeshlist="getall" :getindex="getindex"
+                        v-model:activeIndex="activeIndex"></ListProduct>
+                </div>
                 <div class="card_product border border-light border-2 h-100 bg-light text-dark" style="padding: 10px;"
                     v-if="getindex">
                     <h5>Chi tiết sản phẩm</h5>
@@ -148,12 +150,15 @@ export default {
 <style scoped>
 .list_item_product,
 .list_item_user {
-    height: 300px;
+    height: 250px;
     overflow-y: scroll;
     text-overflow: ellipsis;
-    display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+}
+
+.card_product {
+    min-width: 300px;
 }
 
 #product::-webkit-scrollbar,
@@ -161,4 +166,15 @@ export default {
     width: 6px;
     background-color: #fff;
 }
-</style>
+
+@media only screen and (max-width:1023px) {
+    .main_admin {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .main_admin {
+        flex-direction: column;
+    }
+}</style>

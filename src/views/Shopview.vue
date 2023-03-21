@@ -43,13 +43,13 @@ export default {
     <div class="slider">
         <SliderShop></SliderShop>
     </div>
-    <div style="margin: 20px 100px;">
+    <div class="wrapper_main">
         <div style="text-align: center; margin: 30px 0;" class="heading">
             <h3>Top sản phẩm HOT</h3>
             <h6>Những sản phẩm thời trang mới nhất/Hot nhất</h6>
         </div>
         <div class="flex-row" style="margin:0 100px;">
-            <div class="d-sm-flex" id="ao">
+            <div class="d-sm-flex list_products" id="ao">
                 <div class="card m-1" v-for="item in Products" v-show="item.categories === 'Áo'">
                     <div class="wrapper-img">
                         <div class="image_slider">
@@ -74,7 +74,7 @@ export default {
                 <h3>Top BALO HOT</h3>
                 <h6>Những sản phẩm thời trang mới nhất/Hot nhất</h6>
             </div>
-            <div class="d-sm-flex" id="balo">
+            <div class="d-sm-flex list_products" id="balo">
                 <div class="card m-1" v-for="item in Products" v-show="item.categories === 'Balo'">
                     <div class="wrapper-img">
                         <div class="image_slider">
@@ -99,7 +99,7 @@ export default {
                 <h3>Top Giày Dép HOT</h3>
                 <h6>Những sản phẩm thời trang mới nhất/Hot nhất</h6>
             </div>
-            <div class="d-sm-flex" id="giay">
+            <div class="d-sm-flex list_products" id="giay">
                 <div class="card m-1" v-for="item in Products"
                     v-show="item.categories === 'Giày' || item.categories === 'Dép'">
                     <div class="wrapper-img">
@@ -126,7 +126,11 @@ export default {
     <div>
     </div>
 </template>
-<style scoped>   .wrapper-img {
+<style scoped>
+.wrapper_main{
+    margin: 20px 80px;
+}
+   .wrapper-img {
        width: 100%;
        height: 100%;
        overflow: hidden;
@@ -144,4 +148,20 @@ export default {
 
    .image_item {
        flex: 1 0 100%;
-   }</style>
+   }
+ @media only screen and (max-width:1023px) {
+    .wrapper_main{
+    margin: 10px 20px;
+    }
+    .list_products{
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .wrapper_main{
+    margin: 0;
+    }
+
+}
+</style>

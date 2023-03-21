@@ -72,15 +72,11 @@ export default {
 </script>
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
+    <div class="d-flex justify-content-between w-100">
       <a class="navbar-brand" href="#">
         <img src="https://iconape.com/wp-content/files/mp/163664/svg/163664.svg" alt="Yame.vn" style="width: 66px;">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="wrapper_nav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <router-link to="/" class="nav-link" aria-current="page">
@@ -120,10 +116,14 @@ export default {
             </ul>
           </li>
         </ul>
-        <form class="d-flex flex-mb">
-          <input class="form-control me-2 hiden" id="input_search" type="search" placeholder="Search" aria-label="Search">
+      </div>
+      <div class="d-flex wrapper_all">
+        <div class="d-flex">
+          <form class="d-flex flex-mb search">
+            <input class="form-control me-2 hiden" id="input_search" type="search" placeholder="Search" aria-label="Search" >
+          </form>
           <button class="btn btn-dark" type="button" @click="slideSearch()"><i class="bi bi-search icon"></i></button>
-        </form>
+        </div>
         <div class="Cart">
           <div class="wrapper_cart">
             <div class="cart_link" id="cart_link">
@@ -169,7 +169,8 @@ export default {
             </div>
           </div>
           <div class="login">
-            <span class="text-light data_user" data-bs-toggle="collapse" href="#user"></span>
+            <span class="text-light data_user" data-bs-toggle="collapse" href="#user"
+              style="text-transform: uppercase;"></span>
             <div class="collapse user_link" id="user">
               <div class="card card-body bg-dark connect-shop">
                 <router-link to="/profile" class="text-white">Trang cá nhân</router-link>
@@ -183,6 +184,16 @@ export default {
   </nav>
 </template>
 <style scoped>
+.navbar-brand{
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+}
+.wrapper_nav{
+  display: flex;
+  align-items: center;
+  padding-left: 200px;
+}
 .connect-shop {
   padding: 0;
 }
@@ -198,10 +209,16 @@ export default {
 .navbar-dark .navbar-nav .nav-link {
   color: white;
 }
-
+.search{
+  display: flex;
+  height: 40px;
+  margin: auto;
+}
 .User,
 .Cart {
   margin-left: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .wrapper_cart {
@@ -268,7 +285,7 @@ export default {
 
 .input_search {
   visibility: visible;
-  animation: Search 0.5s linear;
+  animation: Search .1s linear;
 }
 
 
@@ -334,25 +351,9 @@ export default {
   display: flex;
   justify-content: space-around;
 }
-
-@media only screen and (max-width:1024px) {
-
-  .User,
-  .Cart {
-    display: none;
-  }
-
-  @keyframes Search {
-    0% {
-      transform: translateX(5%);
-    }
-
-    100% {
-      transform: translateX(0%);
-    }
-  }
+.wrapper_all{
+  padding-right: 32px;
 }
-
 @keyframes fadeIn {
   0% {
     opacity: 0.5;
@@ -362,5 +363,51 @@ export default {
   100% {
     opacity: 1;
     transform: translateY(0%);
+  }
+}
+
+@media only screen and (max-width:1023px) {
+  .hiden {
+    visibility: visible;
+  }
+
+  .wrapper_nav {
+    display: none;
+  }
+
+  .wrapper_all{
+    width: 100%;
+    justify-content: end;
+  }
+
+  .wrapper_all .User {
+    display: flex;
+    justify-content: center;
+  }
+
+  @keyframes Search {
+    100% {
+      transform: translateX(0%);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper_nav {
+    display: none;
+  }
+
+  .hiden {
+    visibility: visible;
+  }
+
+  .wrapper_all {
+    width: 100%;
+    justify-content: end;
+  }
+
+  .wrapper_all .User {
+    display: flex;
+    align-items: center;
   }
 }</style>

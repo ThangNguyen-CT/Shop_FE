@@ -45,13 +45,13 @@ export default {
 	<router-link to="/admin" v-if="getadmin()">
 		<span class="">Trang quản trị</span>
 	</router-link>
-	<div style="display: flex;">
-		<div v-if="currentUser" style="margin: 100px;">
-			<header class="jumbotron">
+	<div class="wrapper_profile">
+		<div v-if="currentUser" class="profile">
+			<div class="jumbotron">
 				<h3>
 					Thông tin người dùng
 				</h3>
-			</header>
+			</div>
 			<div class="row">
 				<div class="col-md-8">
 					<p class="text-break">
@@ -72,10 +72,24 @@ export default {
 			<button class="btn btn-warning text-light" style="margin-left: 20px;" @click="showedit"
 				v-if="checkedit">Hủy</button>
 		</div>
-		<div v-if="checkedit" class="d-flex flex-column justify-content-center">
+		<div v-if="checkedit" class="d-flex flex-column justify-content-center edit">
 			<h4>Thay đổi thông tin</h4>
 			<EditUser :user="currentUser"></EditUser>
 		</div>
 	</div>
 </template>
-
+<style scoped>
+.wrapper_profile {
+	display: flex;
+	flex-direction: column;
+	padding-top: 20px;
+}
+.profile{
+	margin: auto;
+}
+.edit{
+	padding: 20px 0;
+	margin: auto;
+	width: 300px;
+}
+</style>
