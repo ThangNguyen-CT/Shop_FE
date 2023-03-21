@@ -6,12 +6,12 @@ import HeaderShop from "../components/HeaderShop.vue";
 import EditUser from "../components/EditUser.vue";
 import toastsVue from "../components/toasts.vue";
 export default {
-	data(){
-		return{
-			checkedit:false,
+	data() {
+		return {
+			checkedit: false,
 		}
 	},
-	components:{
+	components: {
 		HeaderShop,
 		EditUser,
 		toastsVue
@@ -21,20 +21,20 @@ export default {
 			currentUser: "user",
 		}),
 	},
-	methods:{
-		getadmin(){
+	methods: {
+		getadmin() {
 			return this.currentUser.isAdmin;
 		},
-		showedit(){
-			if(!this.checkedit){
-				this.checkedit=true;
+		showedit() {
+			if (!this.checkedit) {
+				this.checkedit = true;
 			}
-			else{
-				this.checkedit=false;
+			else {
+				this.checkedit = false;
 			}
 		},
 	},
-	mounted(){
+	mounted() {
 		this.getadmin();
 	}
 };
@@ -43,35 +43,39 @@ export default {
 	<HeaderShop></HeaderShop>
 	<toastsVue></toastsVue>
 	<router-link to="/admin" v-if="getadmin()">
-			<span class="">Trang quản trị</span>
+		<span class="">Trang quản trị</span>
 	</router-link>
 	<div style="display: flex;">
-	<div v-if="currentUser" style="margin: 100px;">
-		<header class="jumbotron">
-			<h3>
-				Thông tin người dùng
-			</h3>
-		</header>
-		<div class="row">
-			<div class="col-md-8">
-				<p class="text-break">
-					<strong>Name:</strong>
-					{{ currentUser.username }}
-				</p>
-				<p>
-					<strong>E-mail:</strong>
-					{{ currentUser.email }}
-				</p>
+		<div v-if="currentUser" style="margin: 100px;">
+			<header class="jumbotron">
+				<h3>
+					Thông tin người dùng
+				</h3>
+			</header>
+			<div class="row">
+				<div class="col-md-8">
+					<p class="text-break">
+						<strong>Name:</strong>
+						{{ currentUser.username }}
+					</p>
+					<p>
+						<strong>E-mail:</strong>
+						{{ currentUser.email }}
+					</p>
+				</div>
 			</div>
+			<router-link to="/">
+				<button class="btn btn-danger">Trở về</button>
+			</router-link>
+			<button class="btn btn-warning text-light" style="margin-left: 20px;" @click="showedit" v-if="!checkedit">Hiệu
+				chỉnh</button>
+			<button class="btn btn-warning text-light" style="margin-left: 20px;" @click="showedit"
+				v-if="checkedit">Hủy</button>
 		</div>
-		<router-link to="/">
-			<button class="btn btn-danger">Trở về</button>
-		</router-link>
-		<button class="btn btn-warning text-light" style="margin-left: 20px;" @click="showedit">Hiệu chỉnh</button>
-	</div>
-	<div v-if="checkedit" style="display: flex;flex-direction: column;justify-content: center;">
+		<div v-if="checkedit" class="d-flex flex-column justify-content-center">
+			<h4>Thay đổi thông tin</h4>
 			<EditUser :user="currentUser"></EditUser>
+		</div>
 	</div>
-</div>
 </template>
 
