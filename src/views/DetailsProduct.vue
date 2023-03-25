@@ -97,66 +97,69 @@ export default {
 <template>
     <HeaderShop></HeaderShop>
     <toastsVue></toastsVue>
-    <div class="heading">
-        <div class="title" style="background-color: #e9ecef;">
-            <h2 class="text-dark" style="padding-left: 20px;">Product Details</h2>
+    <div class="main_cart">
+        <div class="heading">
+            <div class="title" style="background-color: #e9ecef;">
+                <h2 class="text-dark" style="padding-left: 20px;">Product Details</h2>
+            </div>
         </div>
-    </div>
-    <div class="wrapper">
-        <div class="details d-flex justify-content-between flex-wrap">
-            <div class="img_product col">
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item" v-for="(img, index) in detailproduct.img"
-                            :class="{ active: index == 0 }">
-                            <img :src="img" class="d-block w-100" alt="..." style="border-radius: 8px ;">
+        <div class="wrapper">
+            <div class="details d-flex justify-content-between flex-wrap">
+                <div class="img_product col">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item" v-for="(img, index) in detailproduct.img"
+                                :class="{ active: index == 0 }">
+                                <img :src="img" class="d-block w-100" alt="..." style="border-radius: 8px ;">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="info_product col" style="margin-left: 20px;">
+                    <h5 style="font-weight: 400;">{{ detailproduct.title }}</h5>
+                    <span class="pricte text-danger">{{ detailproduct.price }}$</span>
+                    <div class="size_product">
+                        <h5>Size</h5>
+                        <div class="list_btn_size">
+                            <h6 class="text-secondary">{{ detailproduct.size }}</h6>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-            <div class="info_product col" style="margin-left: 20px;">
-                <h5 style="font-weight: 400;">{{ detailproduct.title }}</h5>
-                <span class="pricte text-danger">{{ detailproduct.price }}$</span>
-                <div class="size_product">
-                    <h5>Size</h5>
-                    <div class="list_btn_size">
-                        <h6 class="text-secondary">{{ detailproduct.size }}</h6>
+                    <div class="color_product">
+                        <h5>Màu sắc</h5>
+                        <div class="list_btn_color">
+                            <h6 class="text-secondary">{{ detailproduct.color }}</h6>
+                        </div>
+                    </div>
+                    <div class="quatitly-product">
+                        <h5>Nhập số lượng</h5>
+                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                            <input id="quantity" name="quantity" type="number" v-model="sub_quantity"
+                                class="form-control form-control-sm" style="width:50px; border: none;" />
+                        </div>
+                    </div>
+                    <div class="btn_product">
+                        <button type="submit" class="btn btn-danger" style="width:150px;" @click="getidcart()">Đặt
+                            hàng</button>
+                        <router-link to="/">
+                            <button type="button" class="btn btn-danger" style="width:150px;">Trở về</button>
+                        </router-link>
                     </div>
                 </div>
-                <div class="color_product">
-                    <h5>Màu sắc</h5>
-                    <div class="list_btn_color">
-                        <h6 class="text-secondary">{{ detailproduct.color }}</h6>
-                    </div>
+                <div class="describe_product col">
+                    <h4>Mô tả sản phẩm</h4>
+                    <p>{{ detailproduct.desc }}
+                    </p>
                 </div>
-                <div class="quatitly-product">
-                    <h5>Nhập số lượng</h5>
-                    <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                        <input id="quantity" name="quantity" type="number" v-model="sub_quantity"
-                            class="form-control form-control-sm" style="width:50px; border: none;" />
-                    </div>
-                </div>
-                <div class="btn_product">
-                    <button type="submit" class="btn btn-danger" style="width:150px;" @click="getidcart()">Đặt hàng</button>
-                    <router-link to="/">
-                        <button type="button" class="btn btn-danger" style="width:150px;">Trở về</button>
-                    </router-link>
-                </div>
-            </div>
-            <div class="describe_product col">
-                <h4>Mô tả sản phẩm</h4>
-                <p>{{ detailproduct.desc }}
-                </p>
             </div>
         </div>
     </div>
@@ -191,10 +194,10 @@ export default {
 }
 
 .wrapper {
-    margin: 50px 100px;
+    margin: 50px 0;
 }
 
-.heading {
+.main_cart {
     margin: 0 100px;
 }
 
@@ -204,5 +207,33 @@ export default {
     flex-direction: column;
     width: 100%;
     height: 100px;
+}
+
+@media only screen and (max-width:1023px) {  
+ .main_cart{
+    margin: 0;
+ }
+}   
+
+@media only screen and (max-width: 600px) {
+ .wrapper .details {
+    flex-direction: column;
+ }
+ .main_cart{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+ }
+}
+
+@media only screen and (min-width: 414px) and (max-width: 599px) {
+ .wrapper .details {
+    flex-direction: column;
+ }
+ .main_cart{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+ }
 }
 </style>

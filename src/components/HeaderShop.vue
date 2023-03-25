@@ -73,7 +73,7 @@ export default {
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="d-flex justify-content-between w-100">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/">
         <img src="https://iconape.com/wp-content/files/mp/163664/svg/163664.svg" alt="Yame.vn" style="width: 66px;">
       </a>
       <div class="wrapper_nav">
@@ -120,7 +120,8 @@ export default {
       <div class="d-flex wrapper_all">
         <div class="d-flex">
           <form class="d-flex flex-mb search">
-            <input class="form-control me-2 hiden" id="input_search" type="search" placeholder="Search" aria-label="Search" >
+            <input class="form-control me-2 hiden" id="input_search" type="search" placeholder="Search"
+              aria-label="Search">
           </form>
           <button class="btn btn-dark" type="button" @click="slideSearch()"><i class="bi bi-search icon"></i></button>
         </div>
@@ -184,16 +185,18 @@ export default {
   </nav>
 </template>
 <style scoped>
-.navbar-brand{
+.navbar-brand {
   display: flex;
   align-items: center;
   padding-left: 16px;
 }
-.wrapper_nav{
+
+.wrapper_nav {
   display: flex;
   align-items: center;
   padding-left: 200px;
 }
+
 .connect-shop {
   padding: 0;
 }
@@ -209,11 +212,13 @@ export default {
 .navbar-dark .navbar-nav .nav-link {
   color: white;
 }
-.search{
+
+.search {
   display: flex;
   height: 40px;
   margin: auto;
 }
+
 .User,
 .Cart {
   margin-left: 20px;
@@ -351,9 +356,11 @@ export default {
   display: flex;
   justify-content: space-around;
 }
-.wrapper_all{
+
+.wrapper_all {
   padding-right: 32px;
 }
+
 @keyframes fadeIn {
   0% {
     opacity: 0.5;
@@ -366,7 +373,7 @@ export default {
   }
 }
 
-@media only screen and (max-width:1023px) {
+@media only screen and (max-width:1024px) {
   .hiden {
     visibility: visible;
   }
@@ -375,7 +382,7 @@ export default {
     display: none;
   }
 
-  .wrapper_all{
+  .wrapper_all {
     width: 100%;
     justify-content: end;
   }
@@ -391,7 +398,7 @@ export default {
     }
   }
 }
-
+/* small */
 @media only screen and (max-width: 600px) {
   .wrapper_nav {
     display: none;
@@ -409,5 +416,17 @@ export default {
   .wrapper_all .User {
     display: flex;
     align-items: center;
+  }
+
+  .cart_link {
+    width: 370px;
+    right: -100px;
+  }
+}
+/* Ip8 */
+@media only screen and (min-width: 414px) and (max-width: 599px) {
+  .cart_link {
+    width: 400px;
+    right: -100px;
   }
 }</style>

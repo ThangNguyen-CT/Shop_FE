@@ -99,7 +99,7 @@ export default {
                     <input type="search" id="form1" class="form-control" v-model="searchuser" />
                 </div>
             </div>
-            <div class="d-flex">
+            <div class="wrapper_list d-flex">
                 <div class="list_item_user d-flex" id="user">
                     <ListUser :users="fiilterSearchUser" :refeshlist="getall" v-model:activeUser="activeUser"></ListUser>
                 </div>
@@ -120,7 +120,7 @@ export default {
                     <input type="search" id="form1" class="form-control" v-model="searchproduct" />
                 </div>
             </div>
-            <div class="d-flex">
+            <div class="wrapper_list  d-flex">
                 <div class="list_item_product d-flex justify-content-around" id="product">
                     <ListProduct :products="fiilterSearchProduct" :refeshlist="getall" :getindex="getindex"
                         v-model:activeIndex="activeIndex"></ListProduct>
@@ -177,4 +177,10 @@ export default {
     .main_admin {
         flex-direction: column;
     }
-}</style>
+}
+@media only screen and (min-width: 414px) and (max-width: 599px){
+    .wrapper_list {
+        flex-direction: column;
+    }
+}
+</style>
