@@ -115,4 +115,20 @@
  font-size: 30px; 
  color: dodgerblue;
 }
+@media only screen and (max-width:1023px) {
+.wrapper{
+  margin: 20px 10px;
+}
+}
+
+@media only screen and (max-width: 600px) {
+.wrapper{
+  margin: 20px 10px;
+}
+}
+@media only screen and (min-width: 414px) and (max-width: 599px){
+.wrapper{
+  margin: 20px 10px;
+}
+}
 </style>
