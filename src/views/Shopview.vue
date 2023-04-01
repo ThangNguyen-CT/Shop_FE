@@ -48,7 +48,7 @@ export default {
             <h3>Top sản phẩm HOT</h3>
             <h6>Những sản phẩm thời trang mới nhất/Hot nhất</h6>
         </div>
-        <div class="flex-row" style="margin:0 100px;">
+        <div class="flex-row">
             <div class="d-sm-flex list_products" id="ao">
                 <div class="card m-1" v-for="item in Products" v-show="item.categories === 'Áo'">
                     <div class="wrapper-img">

@@ -112,7 +112,7 @@ export default {
         </div>
         <div class="list_products">
             <div class="product_heading">
-                <h4>Danh Sách Người dùng</h4>
+                <h4>Danh Sách sản phẩm</h4>
             </div>
             <div class="input-group">
                 <span class="d-flex flex-column justify-content-center">Tìm kiếm</span>
