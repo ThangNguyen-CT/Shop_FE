@@ -12,5 +12,5 @@ export default defineConfig({
                 import.meta.url))
         }
     },
-    base: process.env.NODE_ENV === 'production' ? 'https://shop-fe-six.vercel.app/' : '/',
+    base: process.env.NODE_ENV === 'production' ? 'SHOP' : '/',
 })
