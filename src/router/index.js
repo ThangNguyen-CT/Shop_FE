@@ -1,60 +1,70 @@
-import {createRouter,createWebHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
-const routes = [
-    {
+const routes = [{
         path: "/",
         name: "ShopMain",
-        component: () => import("@/views/Shopview.vue"),
+        component: () =>
+            import ("@/views/Shopview.vue"),
     },
     {
-        path: "/Cart",
+        path: "./Cart",
         name: "CartShop",
-        component: () => import("@/views/CartShop.vue"),
+        component: () =>
+            import ("@/views/CartShop.vue"),
     },
     {
         path: "/login",
         name: "login",
-        component: () => import("@/views/LoginUser.vue"),
+        component: () =>
+            import ("@/views/LoginUser.vue"),
     },
     {
         path: "/logup",
         name: "Logup",
-        component: () => import("@/views/Logup.vue"),
+        component: () =>
+            import ("@/views/Logup.vue"),
     },
     {
         path: "/details/:id",
         name: "details",
-        component: () => import("@/views/DetailsProduct.vue"),
+        component: () =>
+            import ("@/views/DetailsProduct.vue"),
     },
     {
         path: "/addproduct",
         name: "addproduct",
-        component: () => import("@/views/AddProduct.vue"),
+        component: () =>
+            import ("@/views/AddProduct.vue"),
     },
     {
         path: "/editproduct/:id",
         name: "editproduct",
-        component: () => import("@/views/EditProduct.vue"),
+        component: () =>
+            import ("@/views/EditProduct.vue"),
     },
     {
         path: "/profile",
         name: "profile",
-        component: () => import("@/views/UserProfile.vue"),
+        component: () =>
+            import ("@/views/UserProfile.vue"),
     },
     {
         path: "/admin",
         name: "admin",
-        component: () => import("@/views/Adminview.vue"),
+        component: () =>
+            import ("@/views/Adminview.vue"),
     },
     {
         path: "/:pathMatch(.*)*",
         name: "NotFound",
-        component: () => import("@/views/NotFound.vue"),
+        component: () =>
+            import ("@/views/NotFound.vue"),
     },
 ];
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
+    history: createWebHistory(
+        import.meta.env.BASE_URL),
     routes,
 });
 
