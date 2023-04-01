@@ -14,5 +14,5 @@ export default defineConfig({
     },
 })
 module.exports = {
-    publicPath: process.env.BASE_PATH === 'production' ? 'https://shop-fe-six.vercel.app/' : '/'
+    publicPath: process.env.NODE_ENV === 'production' ? 'https://shop-fe-six.vercel.app/' : '/'
 }
