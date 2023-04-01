@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "builds": [
+        { "src": "npm run build", "use": "@vercel/static" }
+    ],
+    "routes": [{
+        "src": "/Cart",
+        "dest": "/index.html"
+    }]
+}
