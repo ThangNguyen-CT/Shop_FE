@@ -90,8 +90,8 @@ export default {
     },
     created() {
         this.getproduct();
+        window.scrollTo(0, 0);
     },
-
 }
 </script>
 <template>
@@ -209,31 +209,32 @@ export default {
     height: 100px;
 }
 
-@media only screen and (max-width:1023px) {  
- .main_cart{
-    margin: 0;
- }
-}   
+@media only screen and (max-width:1023px) {
+    .main_cart {
+        margin: 0;
+    }
+}
 
 @media only screen and (max-width: 600px) {
- .wrapper .details {
-    flex-direction: column;
- }
- .main_cart{
-    margin: 0;
-    display: flex;
-    flex-direction: column;
- }
+    .wrapper .details {
+        flex-direction: column;
+    }
+
+    .main_cart {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media only screen and (min-width: 414px) and (max-width: 599px) {
- .wrapper .details {
-    flex-direction: column;
- }
- .main_cart{
-    margin: 0;
-    display: flex;
-    flex-direction: column;
- }
-}
-</style>
+    .wrapper .details {
+        flex-direction: column;
+    }
+
+    .main_cart {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+}</style>

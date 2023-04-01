@@ -44,10 +44,11 @@ export default {
       this.toasts.title = "Deleted",
         this.toasts.msg = "Đã xóa sản phẩm",
         this.toasts.type = "error",
-        this.toasts.duration = 2000
+        this.toasts.duration = 2000;
       this.toastsjs();
-      await CartService.delete(this.carts[index]._id)
+      await CartService.delete(this.carts[index]._id);
       this.refeshlistcart();
+      window.location.reload();
     },
     toastsjs,
     refeshlistcart() {
@@ -76,8 +77,9 @@ export default {
       return total;
     }
   },
-  created() {
+  mounted() {
     this.refeshlistcart();
+    window.scrollTo(0, 0);
   },
 }
 </script>
@@ -144,7 +146,7 @@ export default {
                     </div>
 
                     <button type="button" class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark"
-                      @click="registerproduct()">Register</button>
+                      @click="registerproduct()">Thanh toán</button>
 
                   </div>
                 </div>

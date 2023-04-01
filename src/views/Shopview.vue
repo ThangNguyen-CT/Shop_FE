@@ -32,6 +32,7 @@ export default {
     },
     mounted() {
         this.retrieveProduct();
+        window.scrollTo(0, 0);
     },
 }
 </script>
@@ -90,7 +91,7 @@ export default {
                             name: 'details',
                             params: { id: item._id },
                         }">
-                            <button type="button" class="btn btn-outline-dark" @click="nextdetailsproduct">Mua hàng</button>
+                            <button type="button" class="btn btn-outline-dark">Mua hàng</button>
                         </router-link>
                     </div>
                 </div>
@@ -116,7 +117,7 @@ export default {
                             name: 'details',
                             params: { id: item._id },
                         }">
-                            <button type="button" class="btn btn-outline-dark" @click="nextdetailsproduct">Mua hàng</button>
+                            <button type="button" class="btn btn-outline-dark">Mua hàng</button>
                         </router-link>
                     </div>
                 </div>
