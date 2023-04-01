@@ -48,10 +48,6 @@ export default {
           this.toasts.type = "success",
           this.toasts.duration = 3000
         this.toast();
-        // setTimeout(()=>{
-        //     this.logout();
-        //     this.$router.push({name:"login"});
-        // },2000);
       } catch (error) {
         this.toasts.title = "Faild",
           this.toasts.msg = "Có lỗi hoặc trùng tên người dùng",

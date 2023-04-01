@@ -8,6 +8,7 @@ export default {
 	data() {
 		return {
 			checkedit: false,
+			checkadmin: false
 		}
 	},
 	components: {
@@ -21,10 +22,10 @@ export default {
 		}),
 	},
 	methods: {
-		getadmin() {
-			return this.currentUser.isAdmin;
+		getadmin(){	
+			this.checkadmin = this.currentUser.isAdmin;
 		},
-		showedit() {
+		showedit(){
 			if (!this.checkedit) {
 				this.checkedit = true;
 			}
@@ -35,13 +36,13 @@ export default {
 	},
 	mounted() {
 		this.getadmin();
-	}
+	}	
 };
 </script>
 <template>
 	<HeaderShop></HeaderShop>
 	<toastsVue></toastsVue>
-	<router-link to="/admin" v-if="getadmin()">
+	<router-link to="/admin" v-if="checkadmin">
 		<span class="">Trang quản trị</span>
 	</router-link>
 	<div class="wrapper_profile">
@@ -71,7 +72,8 @@ export default {
 			<button class="btn btn-warning text-light" style="margin-left: 20px;" @click="showedit"
 				v-if="checkedit">Hủy</button>
 		</div>
-		<div v-show="checkedit" class="d-flex flex-column justify-content-center edit">
+		
+		<div v-if="checkedit" class="d-flex flex-column justify-content-center edit">
 			<h4>Thay đổi thông tin</h4>
 			<EditUser :user="currentUser"></EditUser>
 		</div>
