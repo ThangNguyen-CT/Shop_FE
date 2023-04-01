@@ -1,10 +1,18 @@
 {
-    "version": 2,
-    "builds": [
-        { "src": "npm run build", "use": "@vercel/static" }
-    ],
     "rewrites": [{
-        "source": "/Cart",
-        "destination": "/Cart/index.html"
+            "source": "/api/:path*",
+            "destination": "https://my-api.com/:path*"
+        },
+        {
+            "source": "/:path*",
+            "destination": "/index.html"
+        }
+    ],
+    "headers": [{
+        "source": "/:path*",
+        "headers": [{
+            "key": "Cache-Control",
+            "value": "s-maxage=1, stale-while-revalidate"
+        }]
     }]
 }
