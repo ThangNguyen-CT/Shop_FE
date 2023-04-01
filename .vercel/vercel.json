@@ -4,7 +4,7 @@
         { "src": "npm run build", "use": "@vercel/static" }
     ],
     "routes": [{
-        "src": "/",
+        "src": "/Cart",
         "dest": "/index.html"
     }]
 }
