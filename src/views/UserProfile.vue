@@ -1,46 +1,45 @@
-
 <script>
-import { mapState } from "pinia";
-import { useAuthStore } from "@/stores/Auth.store";
-import HeaderShop from "../components/HeaderShop.vue";
-import EditUser from "../components/EditUser.vue";
-import toastsVue from "../components/toasts.vue";
-export default {
-	data() {
-		return {
-			checkedit: false,
-		}
-	},
-	components: {
-		HeaderShop,
-		EditUser,
-		toastsVue
-	},
-	computed: {
-		...mapState(useAuthStore, {
-			currentUser: "user",
-		}),
-	},
-	methods: {
-		getadmin() {
-			return this.currentUser.isAdmin;
-		},
-		showedit() {
-			if (!this.checkedit) {
-				this.checkedit = true;
-			}
-			else {
-				this.checkedit = false;
-			}
-		},
-	},
-	mounted() {
-		this.getadmin();
-	}
-};
+// import { mapState } from "pinia";
+// import { useAuthStore } from "@/stores/Auth.store";
+// import HeaderShop from "../components/HeaderShop.vue";
+// import EditUser from "../components/EditUser.vue";
+// import toastsVue from "../components/toasts.vue";
+// export default {
+// 	data() {
+// 		return {
+// 			checkedit: false,
+// 		}
+// 	},
+// 	components: {
+// 		HeaderShop,
+// 		EditUser,
+// 		toastsVue
+// 	},
+// 	computed: {
+// 		...mapState(useAuthStore, {
+// 			currentUser: "user",
+// 		}),
+// 	},
+// 	methods: {
+// 		getadmin() {
+// 			return this.currentUser.isAdmin;
+// 		},
+// 		showedit() {
+// 			if (!this.checkedit) {
+// 				this.checkedit = true;
+// 			}
+// 			else {
+// 				this.checkedit = false;
+// 			}
+// 		},
+// 	},
+// 	mounted() {
+// 		this.getadmin();
+// 	}
+// };
 </script>
 <template>
-	<HeaderShop></HeaderShop>
+	<!-- <HeaderShop></HeaderShop>
 	<toastsVue></toastsVue>
 	<router-link to="/admin" v-if="getadmin()">
 		<span class="">Trang quản trị</span>
@@ -76,7 +75,8 @@ export default {
 			<h4>Thay đổi thông tin</h4>
 			<EditUser :user="currentUser"></EditUser>
 		</div>
-	</div>
+	</div> -->
+	<h1>text-transform</h1>
 </template>
 <style scoped>
 .wrapper_profile {
