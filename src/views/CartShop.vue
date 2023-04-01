@@ -48,7 +48,7 @@ export default {
       this.toastsjs();
       await CartService.delete(this.carts[index]._id);
       this.refeshlistcart();
-      window.location.reload();
+      location.reload();
     },
     toastsjs,
     refeshlistcart() {
