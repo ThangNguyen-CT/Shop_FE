@@ -1,5 +1,0 @@
-{
-    "routes": [
-        { "src": "/Cart", "dest": "/https://shop-fe-six.vercel.app/Cart" }
-    ]
-}
