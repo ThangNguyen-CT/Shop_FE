@@ -46,7 +46,7 @@ const routes = [{
         path: "/userprofile",
         name: "profile",
         component: () =>
-            import ("@/views/UserProfile.vue"),
+            import ("@/views/Shopview.vue"),
     },
     {
         path: "/admin",
