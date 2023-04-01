@@ -1,7 +1,7 @@
 {
     "rewrites": [{
             "source": "/api/:path*",
-            "destination": "https://my-api.com/:path*"
+            "destination": "https://shop-fe-six.vercel.app/:path*"
         },
         {
             "source": "/:path*",
