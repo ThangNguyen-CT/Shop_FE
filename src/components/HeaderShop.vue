@@ -174,7 +174,7 @@ export default {
               style="text-transform: uppercase;"></span>
             <div class="collapse user_link" id="user">
               <div class="card card-body bg-dark connect-shop">
-                <router-link to="/profile" class="text-white">Trang cá nhân</router-link>
+                <router-link to="/userprofile" class="text-white">Trang cá nhân</router-link>
                 <a to="/" class="text-white" @click="handlelogout()">Đăng xuất</a>
               </div>
             </div>
